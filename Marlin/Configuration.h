@@ -213,10 +213,25 @@ Here are some standard links for getting your machine calibrated:
   //#define  DEFAULT_Ki 1.08
   //#define  DEFAULT_Kd 114
 
-  // Auto Tune Values
-  #define  DEFAULT_Kp 42.74
-  #define  DEFAULT_Ki 4.53
-  #define  DEFAULT_Kd 100.85
+  // Auto Tune 210C #1
+  //#define  DEFAULT_Kp 31.35
+  //#define  DEFAULT_Ki 3.07
+  //#define  DEFAULT_Kd 80.10
+
+  // Auto Tune 210C #2
+  //#define  DEFAULT_Kp 33.24
+  //#define  DEFAULT_Ki 3.32
+  //#define  DEFAULT_Kd 83.32
+
+  // Auto Tune 250C #1
+  //#define  DEFAULT_Kp 25.44
+  //#define  DEFAULT_Ki 2.31
+  //#define  DEFAULT_Kd 70.02
+
+  // Auto Tune 250C #2
+  #define  DEFAULT_Kp 25.67
+  #define  DEFAULT_Ki 2.31
+  #define  DEFAULT_Kd 71.28
 
   // MakerGear
   //#define  DEFAULT_Kp 7.0
@@ -275,9 +290,39 @@ Here are some standard links for getting your machine calibrated:
   //#define  DEFAULT_bedKd 860.86
 
   // Auto Tune Values Run #3
-  #define  DEFAULT_bedKp 550.58
-  #define  DEFAULT_bedKi 96.57
-  #define  DEFAULT_bedKd 784.79
+  //#define  DEFAULT_bedKp 550.58
+  //#define  DEFAULT_bedKi 96.57
+  //#define  DEFAULT_bedKd 784.79
+
+  // Auto Tune 60C #1
+  //#define  DEFAULT_bedKp 252.37
+  //#define  DEFAULT_bedKi 34.70
+  //#define  DEFAULT_bedKd 458.94
+
+  // Auto Tune 60C #2
+  //#define  DEFAULT_bedKp 240.72
+  //#define  DEFAULT_bedKi 32.22
+  //#define  DEFAULT_bedKd 449.61
+
+  // Auto Tune 90C #1
+  //#define  DEFAULT_bedKp 684.05
+  //#define  DEFAULT_bedKi 122.08
+  //#define  DEFAULT_bedKd 958.27
+
+  // Auto Tune 90C #2
+  //#define  DEFAULT_bedKp 542.71
+  //#define  DEFAULT_bedKi 93.57
+  //#define  DEFAULT_bedKd 786.92
+
+  // Auto Tune 110C #1
+  //#define  DEFAULT_bedKp 345.70
+  //#define  DEFAULT_bedKi 49.53
+  //#define  DEFAULT_bedKd 603.21
+
+  // Auto Tune 110C #2
+  #define  DEFAULT_bedKp 334.55
+  #define  DEFAULT_bedKi 46.62
+  #define  DEFAULT_bedKd 600.19
 
   //120v 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from pidautotune
