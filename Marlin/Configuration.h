@@ -209,29 +209,9 @@ Here are some standard links for getting your machine calibrated:
 
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
   // Ultimaker
-  //#define  DEFAULT_Kp 22.2
-  //#define  DEFAULT_Ki 1.08
-  //#define  DEFAULT_Kd 114
-
-  // Auto Tune 210C #1
-  //#define  DEFAULT_Kp 31.35
-  //#define  DEFAULT_Ki 3.07
-  //#define  DEFAULT_Kd 80.10
-
-  // Auto Tune 210C #2
-  //#define  DEFAULT_Kp 33.24
-  //#define  DEFAULT_Ki 3.32
-  //#define  DEFAULT_Kd 83.32
-
-  // Auto Tune 250C #1
-  //#define  DEFAULT_Kp 25.44
-  //#define  DEFAULT_Ki 2.31
-  //#define  DEFAULT_Kd 70.02
-
-  // Auto Tune 250C #2
-  #define  DEFAULT_Kp 25.67
-  #define  DEFAULT_Ki 2.31
-  #define  DEFAULT_Kd 71.28
+  #define  DEFAULT_Kp 31.35
+  #define  DEFAULT_Ki 3.07
+  #define  DEFAULT_Kd 80.10
 
   // MakerGear
   //#define  DEFAULT_Kp 7.0
@@ -275,54 +255,9 @@ Here are some standard links for getting your machine calibrated:
 
   //120v 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  //#define  DEFAULT_bedKp 10.00
-  //#define  DEFAULT_bedKi .023
-  //#define  DEFAULT_bedKd 305.4
-
-  // Auto Tune Values Run #1
-  //#define  DEFAULT_bedKp 457.92
-  //#define  DEFAULT_bedKi 66.55
-  //#define  DEFAULT_bedKd 787.74
-
-  // Auto Tune Values Run #2
-  //#define  DEFAULT_bedKp 583.83
-  //#define  DEFAULT_bedKi 98.99
-  //#define  DEFAULT_bedKd 860.86
-
-  // Auto Tune Values Run #3
-  //#define  DEFAULT_bedKp 550.58
-  //#define  DEFAULT_bedKi 96.57
-  //#define  DEFAULT_bedKd 784.79
-
-  // Auto Tune 60C #1
-  //#define  DEFAULT_bedKp 252.37
-  //#define  DEFAULT_bedKi 34.70
-  //#define  DEFAULT_bedKd 458.94
-
-  // Auto Tune 60C #2
-  //#define  DEFAULT_bedKp 240.72
-  //#define  DEFAULT_bedKi 32.22
-  //#define  DEFAULT_bedKd 449.61
-
-  // Auto Tune 90C #1
-  //#define  DEFAULT_bedKp 684.05
-  //#define  DEFAULT_bedKi 122.08
-  //#define  DEFAULT_bedKd 958.27
-
-  // Auto Tune 90C #2
-  //#define  DEFAULT_bedKp 542.71
-  //#define  DEFAULT_bedKi 93.57
-  //#define  DEFAULT_bedKd 786.92
-
-  // Auto Tune 110C #1
-  //#define  DEFAULT_bedKp 345.70
-  //#define  DEFAULT_bedKi 49.53
-  //#define  DEFAULT_bedKd 603.21
-
-  // Auto Tune 110C #2
-  #define  DEFAULT_bedKp 334.55
-  #define  DEFAULT_bedKi 46.62
-  #define  DEFAULT_bedKd 600.19
+  #define  DEFAULT_bedKp 252.37
+  #define  DEFAULT_bedKi 34.70
+  #define  DEFAULT_bedKd 458.94
 
   //120v 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from pidautotune
@@ -362,7 +297,7 @@ Here are some standard links for getting your machine calibrated:
  */
 
 #define THERMAL_PROTECTION_HOTENDS // Enable thermal protection for all extruders
-//#define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated bed
+#define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated bed
 
 //===========================================================================
 //============================= Mechanical Settings =========================
@@ -443,9 +378,9 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 // @section machine
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
-#define INVERT_X_DIR true
-#define INVERT_Y_DIR false
-#define INVERT_Z_DIR true
+#define INVERT_X_DIR false
+#define INVERT_Y_DIR true
+#define INVERT_Z_DIR false
 
 // @section extruder
 
@@ -658,12 +593,12 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
  * MOVEMENT SETTINGS
  */
 
-#define HOMING_FEEDRATE {50*60, 50*60, 50, 0}  // set the homing speeds (mm/min)
+#define HOMING_FEEDRATE {50*60, 50*60, 4*60, 0}  // set the homing speeds (mm/min)
 
 // default settings
 
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {80,80,4000,881}  // default steps per unit for Ultimaker
-#define DEFAULT_MAX_FEEDRATE          {250, 250, 2, 22}    // (mm/sec)
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {100,100,4000,881}  // default steps per unit for Ultimaker
+#define DEFAULT_MAX_FEEDRATE          {250, 250, 5, 25}    // (mm/sec)
 #define DEFAULT_MAX_ACCELERATION      {1000,1000,5,1000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for Skeinforge 40+, for older versions raise them a lot.
 
 #define DEFAULT_ACCELERATION          500    // X, Y, Z and E acceleration in mm/s^2 for printing moves
@@ -746,7 +681,7 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 //#define SDEXTRASLOW // Use even slower SD transfer mode (not normally needed - uncomment if you're getting volume init error)
 //#define SD_CHECK_AND_RETRY // Use CRC checks and retries on the SD communication
 #define ENCODER_PULSES_PER_STEP 2 // Increase if you have a high resolution encoder
-#define ENCODER_STEPS_PER_MENU_ITEM 2 // Set according to ENCODER_PULSES_PER_STEP or your liking
+#define ENCODER_STEPS_PER_MENU_ITEM 1 // Set according to ENCODER_PULSES_PER_STEP or your liking
 //#define ULTIMAKERCONTROLLER //as available from the Ultimaker online store.
 //#define ULTIPANEL  //the UltiPanel as on Thingiverse
 //#define SPEAKER // The sound device is a speaker - not a buzzer. A buzzer resonates with his own frequency.
