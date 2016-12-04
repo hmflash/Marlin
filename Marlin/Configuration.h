@@ -286,9 +286,9 @@
 
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
   // Ultimaker
-  #define  DEFAULT_Kp 31.35
-  #define  DEFAULT_Ki 3.07
-  #define  DEFAULT_Kd 80.10
+  #define  DEFAULT_Kp 32.82
+  #define  DEFAULT_Ki 3.12
+  #define  DEFAULT_Kd 86.32
 
   // MakerGear
   //#define  DEFAULT_Kp 7.0
@@ -332,9 +332,9 @@
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define  DEFAULT_bedKp 252.37
-  #define  DEFAULT_bedKi 34.70
-  #define  DEFAULT_bedKd 458.94
+  #define  DEFAULT_bedKp 285.10
+  #define  DEFAULT_bedKi 26.61
+  #define  DEFAULT_bedKd 763.75
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from pidautotune
@@ -599,7 +599,7 @@
 
 // @section homing
 
-//#define Z_HOMING_HEIGHT 4  // (in mm) Minimal z height before homing (G28) for Z clearance above the bed, clamps, ...
+#define Z_HOMING_HEIGHT 0    // (in mm) Minimal z height before homing (G28) for Z clearance above the bed, clamps, ...
                              // Be sure you have this distance over your Z_MAX_POS in case.
 
 // ENDSTOP SETTINGS:
